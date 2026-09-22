@@ -1,52 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap");
 
 :root {
    /* Surfaces */
-   --background: #222;
-   --surface: #2a2a2a;
-   --surface-card: #2a2a2a;
-   --surface-tile: #353535;
-   --surface-raised: #3a3a3a;
-   --surface-overlay: #2e2e2e;
-   --surface-input: #353535;
-   --surface-button: #333;
-   --surface-button-hover: #3d3d3d;
-   --surface-hover: #3a3a3a;
-   --surface-active: #444;
-   --surface-nav: rgba(255, 255, 255, 0.02);
-   --surface-nav-active: rgba(255, 255, 255, 0.06);
+   --background: #0a0a14;
+   --surface: #11111e;
+   --surface-card: #11111e;
+   --surface-tile: #16162a;
+   --surface-raised: #1a1a30;
+   --surface-overlay: #14142a;
+   --surface-input: #16162a;
+   --surface-button: #1a1a30;
+   --surface-button-hover: #22224a;
+   --surface-hover: #22224a;
+   --surface-active: #2a2a52;
+   --surface-nav: rgba(10, 10, 20, 0.7);
+   --surface-nav-active: rgba(0, 240, 255, 0.08);
 
    /* Borders */
-   --border: rgba(255, 255, 255, 0.08);
-   --border-subtle: rgba(255, 255, 255, 0.04);
-   --border-strong: rgba(255, 255, 255, 0.16);
+   --border: rgba(0, 240, 255, 0.12);
+   --border-subtle: rgba(0, 240, 255, 0.06);
+   --border-strong: rgba(0, 240, 255, 0.3);
 
    /* Text */
-   --text: #fff;
-   --text-muted: #aaa;
-   --text-faint: #555;
+   --text: #ffffff;
+   --text-muted: #8a8aaa;
+   --text-faint: #555577;
 
    /* Accent */
-   --accent: #fff;
-   --accent-hover: #fff;
-   --accent-text: #111;
+   --accent: #00f0ff;
+   --accent-hover: #5cf6ff;
+   --accent-text: #0a0a14;
+
+   /* Neon extras */
+   --neon-purple: #b026ff;
+   --neon-pink: #ff2bd6;
+   --neon-glow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+   --neon-glow-purple: 0 0 10px rgba(176, 38, 255, 0.5), 0 0 20px rgba(176, 38, 255, 0.3);
 
    /* Status */
-   --success: #4caf50;
-   --warning: #ff9800;
-   --danger: #f44336;
+   --success: #00ff9d;
+   --warning: #ffaa00;
+   --danger: #ff3860;
 
    /* Toggle */
-   --toggle-on: var(--success);
-   --toggle-off: #ccc;
+   --toggle-on: var(--accent);
+   --toggle-off: #444466;
    --toggle-knob: #fff;
 
    /* Tabs */
-   --tab: #2a2a2a;
-   --tab-active: #444;
-   --tab-hover: #444;
-   --tab-border: transparent;
+   --tab: #16162a;
+   --tab-active: #2a2a52;
+   --tab-hover: #22224a;
+   --tab-border: rgba(0, 240, 255, 0.2);
 
    /* Radius */
    --radius-sm: 6px;
@@ -59,8 +66,8 @@
    --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
 
    /* Assets */
-   --background-image: url("/./assets/media/background/full-main.png");
-   --backdrop-filter: blur(10px);
+   --background-image: radial-gradient(ellipse at 50% 0%, rgba(176, 38, 255, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(0, 240, 255, 0.08) 0%, transparent 50%), var(--background);
+   --backdrop-filter: blur(12px);
    --nav-image: url("/./assets/media/favicon/main.png");
 
    /* Legacy aliases */
@@ -108,6 +115,12 @@ body {
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
+}
+
+/* Neon scrollbar */
+::-webkit-scrollbar-thumb {
+   background: linear-gradient(180deg, var(--accent), var(--neon-purple));
+   box-shadow: 0 0 6px rgba(0, 240, 255, 0.4);
 }
 
 ::placeholder {
