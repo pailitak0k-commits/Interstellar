@@ -1,8 +1,6 @@
-const isGamesPage = window.location.pathname === "/games";
 const isAppsPage = window.location.pathname === "/apps";
 
 function getStorageKey(baseKey) {
-  if (isGamesPage) return `G${baseKey}`;
   if (isAppsPage) return `A${baseKey}`;
   return baseKey;
 }
@@ -237,8 +235,6 @@ function renderAppCard(app, appIndex, isCustom = false) {
 }
 
 function getJsonPath() {
-  if (isGamesPage) return "/assets/json/games.min.json";
-  if (isAppsPage) return "/assets/json/apps.min.json";
   return "/assets/json/apps.min.json";
 }
 
