@@ -33,10 +33,11 @@ img {
    padding: 0 25px;
    box-sizing: border-box;
    background-color: var(--surface-nav);
-   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 0 20px rgba(0, 240, 255, 0.08);
    -webkit-backdrop-filter: var(--backdrop-filter);
    backdrop-filter: var(--backdrop-filter);
    transition: var(--transition-slow);
+   border: 1px solid var(--border);
    border-radius: var(--radius-lg);
    width: fill;
    margin: 15px;
@@ -45,7 +46,7 @@ img {
 }
 
 .nav-bar .icon:hover {
-   filter: drop-shadow(0 0 8px var(--accent));
+   filter: drop-shadow(0 0 12px var(--accent)) drop-shadow(0 0 24px var(--neon-purple));
    transform: translateY(-2px);
 }
 
@@ -131,6 +132,7 @@ img {
    font-size: 3vh;
    transform: translateX(-20%);
    color: var(--accent-hover);
+   text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
 }
 
 .navbar-icon {

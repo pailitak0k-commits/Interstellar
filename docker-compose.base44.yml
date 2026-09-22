@@ -1,0 +1,25 @@
+services:
+  web:
+    image: node:22-bookworm-slim
+    working_dir: /app
+    # Bind-mount the cloned source so edits appear without rebuilding the image.
+    volumes:
+      - ./:/app
+    # Avoid host/node_modules collisions; deps are installed inside the container.
+    tmpfs:
+      - /app/node_modules
+    ports:
+      - "3000:8080"
+    environment:
+      - PORT=8080
+      - NODE_ENV=development
+      # Bare var consumed by the platform; Vite-style hosts not needed for Express.
+    command: >
+      sh -c "corepack enable && corepack prepare pnpm@10.33.0 --activate && pnpm install --no-frozen-lockfile && node --watch src/server.js"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:8080/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    restart: unless-stopped

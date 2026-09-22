@@ -38,13 +38,14 @@ body {
 
 .settings-card:hover {
    transform: translatey(-5px);
-   border-color: var(--border-strong);
-   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+   border-color: var(--accent);
+   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26), 0 0 20px rgba(0, 240, 255, 0.2);
 }
 
 .settings-card h3 {
    margin-top: 0;
-   color: var(--text);
+   color: var(--accent);
+   text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
 }
 
 .settings-card p {
@@ -70,7 +71,8 @@ input {
 input:hover,
 input:focus {
    background: var(--surface-hover);
-   border-color: var(--border-strong);
+   border-color: var(--accent);
+   box-shadow: var(--neon-glow);
 }
 
 .switch {
@@ -164,7 +166,8 @@ button {
 .key-button:hover,
 button:hover {
    background-color: var(--surface-button-hover);
-   border-color: var(--border-strong);
+   border-color: var(--accent);
+   box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
 }
 
 select {
@@ -181,7 +184,8 @@ select {
 
 select:hover {
    background: var(--surface-button-hover);
-   border-color: var(--border-strong);
+   border-color: var(--accent);
+   box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
 .settings-card label:not(.switch) {

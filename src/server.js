@@ -10,7 +10,6 @@ import basicAuth from "express-basic-auth";
 import rateLimit from "express-rate-limit";
 import config from "../config.js";
 import { mountAnalytics } from "./analytics.js";
-import { mountGhGames } from "./games.js";
 import { injectVersionInfo, resolveVersionInfo } from "./version.js";
 
 console.log(chalk.yellow("🚀 Starting server..."));
@@ -54,8 +53,6 @@ if (config.challenge !== false) {
   });
   app.use(basicAuth({ users: config.users, challenge: true }));
 }
-
-mountGhGames(app);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -109,8 +106,6 @@ if (!vendorMap) {
 
 const routes = [
   { path: "/apps", file: "apps.html" },
-  { path: "/games", file: "games.html" },
-  { path: "/play.html", file: "games.html" },
   { path: "/settings", file: "settings.html" },
   { path: "/tabs", file: "tabs.html" },
   { path: "/", file: "index.html" },

@@ -144,7 +144,7 @@ body {
 
 .bar:focus {
    background: var(--surface-input);
-   box-shadow: none;
+   box-shadow: var(--neon-glow);
    outline: none;
    color: var(--text);
    transition: var(--transition);
@@ -224,11 +224,13 @@ li {
 
 li.active {
    background-color: var(--tab-active);
-   border-color: var(--border-strong);
+   border-color: var(--accent);
+   box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
 li:hover {
    background-color: var(--tab-hover);
+   border-color: var(--border-strong);
 }
 
 iframe {
